@@ -1,0 +1,42 @@
+<template>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="Id"
+                data={tableData}
+                columns={tableColumns}
+                onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </div>
+    <div class="container">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+           <thead>
+              <tr class="slds-line-height_reset">
+                <th class="slds-text-align_right slds-cell_action-mode fix-col" scope="col">
+                    <lightning-input type="checkbox" label="Select All" variant="label-hidden" name="input1"></lightning-input>
+                  </th>
+                <template for:each={tableColumns} for:item="col">
+                    <th class={col.colClassName} scope="col" key={col.label}>
+                        <div class="slds-truncate textwrap" title={col.label}>{col.label}</div>
+                     </th>
+                </template>
+              </tr>
+           </thead>
+           <tbody>
+                <template for:each={tableData} for:item="row">
+                    <tr class="slds-hint-parent" key={row.Id}>
+                        <td class="slds-text-align_right slds-cell_action-mode fix-col" role="gridcell">
+                            <lightning-input type="checkbox" label="Row select" variant="label-hidden"></lightning-input>
+                        </td>
+                        <template for:each={tableColumns} for:item="col">
+                           <td class={col.rowClassName} scope="row" key={col.label}>
+                                <c-scrollable-row col={col} row={row}  ></c-scrollable-row>
+                           </td>
+                        </template>
+                    </tr>
+                  
+                </template>
+                </tbody>
+                </table>
+                </div>
+              
+</template>

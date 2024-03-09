@@ -1,0 +1,14 @@
+<template>
+    <template lwc:if={isTypeAction}>
+        <lightning-button-menu alternative-text="Show menu" icon-size="xx-small">
+            <template for:each={actionList} for:item="action" >
+                <lightning-menu-item value={action.name} label={action.label} key={action.name}></lightning-menu-item>
+            </template>
+        </lightning-button-menu>
+    </template>
+    <template lwc:else>
+        <div class="slds-truncate textwrap" title={rowValue}>{rowValue}</div>
+    </template>
+
+        
+</template>

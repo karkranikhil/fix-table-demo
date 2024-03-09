@@ -1,0 +1,38 @@
+.container{
+    max-width: 1024px;
+    overflow-x: auto;
+}
+.textwrap{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: unset;
+    white-space: pre-line;
+}
+.slds-table thead th:not(:first-child):not(:nth-child(2)) {
+    width: 150px;
+    min-width: 150px;
+}
+table tr > th.fix-col{
+    position: sticky;
+    left: 0;
+    z-index: 99;
+    background-color: #f3f3f3;
+  }
+  table tr > td.fix-col {
+    position: sticky;
+    left: 0;
+    z-index: 99;
+    background-color: #fff;
+  }
+  table tr > th.fix-col:nth-child(2), table tr > td.fix-col:nth-child(2) {
+    left:56px
+  }
+  table tr > th.fix-col:nth-child(3), table tr > td.fix-col:nth-child(3) {
+    left:88px
+  }
+  table tr > th.fix-col:nth-child(4), table tr > td.fix-col:nth-child(4) {
+    left:238px
+  }
+  table tr > th.fix-col:nth-child(5), table tr > td.fix-col:nth-child(5) {
+    left:388px
+  }
